@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "d808c9d2-b126-4977-ace3-c3838675786d",
+		"name": "Nobi Tech Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1b. Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "andreankhouw@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "user_password",
+							"value": "Password1*",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1a. Regis",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_email",
+							"value": "andrean@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "user_password",
+							"value": "Password1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Quote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/quote?search_value=animal&is_category=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"quote"
+					],
+					"query": [
+						{
+							"key": "search_value",
+							"value": "animal",
+							"description": "if you want to search category\n[\"animal\",\"career\",\"celebrity\",\"dev\",\"explicit\",\"fashion\",\"food\",\"history\",\"money\",\"movie\",\"music\",\"political\",\"religion\",\"science\",\"sport\",\"travel\"]"
+						},
+						{
+							"key": "is_category",
+							"value": "0",
+							"description": "1 = true\n0 = false\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDk1NTQyMTIsImlzcyI6Im5vYmlfdGVzdGVyIiwiaWF0IjoxNjQ5NTUwNjEyfQ.HbYQh3AqpweehLF3_TmK4xoTWXKyiwywpjcT8Ei8zeI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "trx_id",
+							"value": "2ab",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "323",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5a. Low High Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDk1NjQxNTAsImlzcyI6Im5vYmlfdGVzdGVyIiwiaWF0IjoxNjQ5NTYwNTUwfQ.LVa7EsCHOrklp5mp0JUNfmvv9I2m7uGu6FIxtgCsbIY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/price/low-high?currency=usd&ticker=BTC&date_start&date_end",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"price",
+						"low-high"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "usd"
+						},
+						{
+							"key": "ticker",
+							"value": "BTC"
+						},
+						{
+							"key": "date_start",
+							"value": null
+						},
+						{
+							"key": "date_end",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5b. History Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDk1NjQxNTAsImlzcyI6Im5vYmlfdGVzdGVyIiwiaWF0IjoxNjQ5NTYwNTUwfQ.LVa7EsCHOrklp5mp0JUNfmvv9I2m7uGu6FIxtgCsbIY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/nobi_technical_test/public/api/v1/price/history?currency=usd&ticker=BTC&date_start&date_end",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"nobi_technical_test",
+						"public",
+						"api",
+						"v1",
+						"price",
+						"history"
+					],
+					"query": [
+						{
+							"key": "currency",
+							"value": "usd"
+						},
+						{
+							"key": "ticker",
+							"value": "BTC"
+						},
+						{
+							"key": "date_start",
+							"value": null
+						},
+						{
+							"key": "date_end",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
